@@ -1,19 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_game"
+    android:padding="32dp"
     tools:context=".MainActivity">
 
+    <!-- Usuario centrado en la parte superior -->
     <TextView
+        android:id="@+id/textViewUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/pixel"
+        android:text="Usuario"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"/>
 
+    <!-- Contador de patos -->
+    <ImageView
+        android:id="@+id/imageViewCounter"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        app:srcCompat="@drawable/duck_hunt_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewUser"/>
+
+    <TextView
+        android:id="@+id/textViewCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/pixel"
+        android:text="0"
+        app:layout_constraintTop_toTopOf="@id/imageViewCounter"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewCounter"
+        app:layout_constraintStart_toEndOf="@id/imageViewCounter"/>
+
+    <!-- Reloj -->
+    <ImageView
+        android:id="@+id/imageViewTime"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="8dp"
+        app:srcCompat="@drawable/timer"
+        app:layout_constraintEnd_toStartOf="@+id/textViewTime"
+        app:layout_constraintTop_toTopOf="@id/textViewTime"
+        app:layout_constraintBottom_toBottomOf="@id/textViewTime"/>
+
+    <TextView
+        android:id="@+id/textViewTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pixel"
+        android:text="60s"
+        app:layout_constraintTop_toTopOf="@id/textViewCounter"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Pato (centrado en pantalla, ejemplo) -->
+    <ImageView
+        android:id="@+id/imageViewDuck"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/duck"
+        app:layout_constraintTop_toBottomOf="@id/imageViewCounter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
